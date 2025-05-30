@@ -1,0 +1,120 @@
+@tailwind base;
+    @tailwind components;
+    @tailwind utilities;
+
+    @layer base {
+      :root {
+        --background: 0 0% 100%; /* White */
+        --foreground: 224 71.4% 4.1%; /* Dark Slate Blue for text */
+
+        --card: 0 0% 100%;
+        --card-foreground: 224 71.4% 4.1%;
+     
+        --popover: 0 0% 100%;
+        --popover-foreground: 224 71.4% 4.1%;
+     
+        --primary: 262.1 83.3% 57.8%; /* Vibrant Purple */
+        --primary-foreground: 0 0% 98%; /* Light text on primary */
+     
+        --secondary: 210 40% 96.1%; /* Light Gray */
+        --secondary-foreground: 222.2 47.4% 11.2%; /* Dark text on secondary */
+     
+        --muted: 210 40% 96.1%;
+        --muted-foreground: 215.4 16.3% 46.9%; /* Muted text */
+     
+        --accent: 210 40% 96.1%;
+        --accent-foreground: 222.2 47.4% 11.2%;
+     
+        --destructive: 0 72.2% 50.6%; /* Red */
+        --destructive-foreground: 0 0% 98%;
+
+        --border: 214.3 31.8% 91.4%; /* Light border */
+        --input: 214.3 31.8% 91.4%;
+        --ring: 262.1 83.3% 57.8%; /* Vibrant Purple for focus rings */
+     
+        --radius: 0.5rem;
+      }
+
+      .dark {
+        /* Dark mode variables can be defined here if needed in future */
+        /* For now, we are focusing on a light theme */
+      }
+    }
+    
+    @layer base {
+      * {
+        @apply border-border;
+      }
+      body {
+        @apply bg-black text-foreground;
+        font-family: 'Inter', 'Poppins', sans-serif;
+        scroll-behavior: smooth;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+    }
+
+    /* Custom scrollbar for a modern, clean feel */
+    ::-webkit-scrollbar {
+      width: 10px;
+      height: 10px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: hsl(var(--secondary));
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: hsl(var(--primary) / 0.6);
+      border-radius: 5px;
+      border: 2px solid hsl(var(--secondary));
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: hsl(var(--primary));
+    }
+    
+    .animated-logo-container {
+      filter: drop-shadow(0 0 10px hsl(var(--primary) / 0.4)) 
+              drop-shadow(0 0 20px hsl(var(--primary) / 0.3))
+              drop-shadow(0 0 30px hsl(var(--primary) / 0.2));
+    }
+
+    .animated-logo-spotlight {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, hsl(var(--primary) / 0.15) 0%, transparent 60%);
+      transform: translate(-50%, -50%);
+      animation: spotlight-rotate 20s linear infinite;
+      pointer-events: none;
+    }
+
+    @keyframes spotlight-rotate {
+      0% { transform: translate(-50%, -50%) rotate(0deg); }
+      100% { transform: translate(-50%, -50%) rotate(360deg); }
+    }
+    
+    .text-gradient-animate {
+      background-size: 200% 200%;
+      animation: gradient-animation 5s ease infinite;
+    }
+
+    @keyframes gradient-animation {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* Custom focus styles for accessibility */
+    *:focus-visible {
+      outline: 2px solid hsl(var(--ring));
+      outline-offset: 2px;
+      box-shadow: 0 0 0 4px hsl(var(--ring) / 0.3);
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
