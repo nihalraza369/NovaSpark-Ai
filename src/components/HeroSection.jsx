@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import { Zap, ArrowDownCircle, Lightbulb, Cpu } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 
-const bgImage = "https://sdmntprnorthcentralus.oaiusercontent.com/files/00000000-1220-622f-8b48-e5a91794d945/raw?se=2025-05-30T23%3A33%3A54Z&sp=r&sv=2024-08-04&sr=b&scid=03a7dffe-0336-527e-be21-c256e1440b62&skoid=789f404f-91a9-4b2f-932c-c44965c11d82&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-05-30T00%3A22%3A18Z&ske=2025-05-31T00%3A22%3A18Z&sks=b&skv=2024-08-04&sig=VzIq%2B%2BSPSFahoAmR018rBXjMtrtww4Hh81p8CTBQn%2Bg%3D"; // shortened for readability
+const bgImage = "https://sdmntprnorthcentralus.oaiusercontent.com/files/00000000-1220-622f-8b48-e5a91794d945/raw?se=2025-05-31T23%3A40%3A06Z&sp=r&sv=2024-08-04&sr=b&scid=91167b3d-8735-52d3-bce1-320a4ae6e582&skoid=1e6af1bf-6b08-4a04-8919-15773e7e7024&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-05-31T22%3A23%3A57Z&ske=2025-06-01T22%3A23%3A57Z&sks=b&skv=2024-08-04&sig=0NDjjwUFwBB/6G7lo37Xog0%2BL3TOWaLQYt8BdX3mE6A%3D"; // shortened for readability
 
 const HeroSection = ({ siteName }) => {
   return (
