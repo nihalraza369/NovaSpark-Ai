@@ -41,13 +41,13 @@ import React, { useState, useEffect } from 'react';
           }}
           animate={isHidden ? "hidden" : "visible"}
           transition={{ duration: 0.35, ease: "easeInOut" }}
-          className="sticky top-3 z-50 rounded-full ml-12 mr-12 bg-purple-900 backdrop-blur-lg shadow-sm border-b border-slate-200"
+          className="sticky top-3 z-50 rounded-full ml-12 mr-12 bg-black backdrop-blur-lg shadow-sm border-b border-slate-200"
         >
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex items-center justify-between h-20">
               <Link to="/" className="inline-block bg-white rounded-xl px-1 py-2 group">
-              <div className="flex items-center text-2xl md:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-primary via-purple-900 to-pink-900 hover:opacity-80 transition-opacity">
-                <Zap size={32} className="mr-2 text-primary transform group-hover:scale-110 transition-transform duration-300" />
+              <div className="flex items-center text-2xl md:text-3xl font-bold text-black bg-clip-text bg-gradient-to-r from-primary via-purple-900 to-pink-900 hover:opacity-80 transition-opacity">
+                <Zap size={32} className="mr-2 text-black transform group-hover:scale-110 transition-transform duration-300" />
                 {siteName}
                 </div>
               </Link>
@@ -84,7 +84,7 @@ import React, { useState, useEffect } from 'react';
                   <span className="sr-only">Search</span>
                 </Button>
                 <Link to="/login">
-                  <Button variant="outline" size="sm" className="text-primary border-primary hover:bg-primary/10 hidden sm:inline-flex">
+                  <Button variant="outline" size="sm" className="text-black  hidden sm:inline-flex">
                     <LogIn className="mr-2 h-4 w-4" /> Login
                   </Button>
                 </Link>
