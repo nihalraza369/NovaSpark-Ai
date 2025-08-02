@@ -5,7 +5,7 @@ import { Zap, ArrowDownCircle, Lightbulb, Cpu } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const bgImage =
-  'https://sdmntprnorthcentralus.oaiusercontent.com/files/00000000-1220-622f-8b48-e5a91794d945/raw?se=2025-06-01T09%3A43%3A39Z&sp=r&sv=2024-08-04&sr=b&scid=6dbf0aca-ae92-5995-9fa5-d3e56a19b1dd&skoid=789f404f-91a9-4b2f-932c-c44965c11d82&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-06-01T08%3A41%3A29Z&ske=2025-06-02T08%3A41%3A29Z&sks=b&skv=2024-08-04&sig=2FknIX2ceTWnuJiy5Xm6XEtuxrIdBEtEi8QoSEf99Oc%3D';
+  'A full-body black robot standing upright against a white background The robot has a sleek, modern design with expressive, glowing eyes The robot has a head, arms, and legs, and is standing in a neut.png';
 
 const HeroSection = ({ siteName }) => {
   return (
@@ -13,12 +13,12 @@ const HeroSection = ({ siteName }) => {
       {/* Background Animated Blurs */}
       <div className="absolute inset-0 z-0 pointer-events-none">
         <motion.div
-          className="absolute top-1/4 left-1/4 w-32 h-32 md:w-48 md:h-48 bg-primary/10 rounded-full blur-3xl"
+          className="absolute top-1/4 left-1/4 w-32 h-32 md:w-48 md:h-48 bg-black rounded-full blur-3xl"
           animate={{ x: [-20, 20, -20], y: [-10, 10, -10], scale: [1, 1.1, 1] }}
           transition={{ duration: 15, repeat: Infinity, ease: 'linear' }}
         />
         <motion.div
-          className="absolute bottom-1/4 right-1/4 w-32 h-32 md:w-48 md:h-48 bg-purple-500/10 rounded-full blur-3xl"
+          className="absolute bottom-1/4 right-1/4 w-32 h-32 md:w-48 md:h-48 bg-black rounded-full blur-3xl"
           animate={{ x: [30, -30, 30], y: [15, -15, 15], rotate: [0, 180, 360] }}
           transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
         />
@@ -37,9 +37,9 @@ const HeroSection = ({ siteName }) => {
             <img
               src={bgImage}
               alt="AI Visual"
-              className="w-full max-w-md z-10 relative"
+              className="w-full max-w-md z-10  relative"
             />
-            <div className="absolute inset-0 rounded-xl bg-purple-300 blur-2xl opacity-30 group-hover:opacity-50 transition" />
+            <div className="absolute inset-0 rounded-xl bg-black blur-2xl opacity-10" />
           </div>
         </motion.div>
 
@@ -51,12 +51,12 @@ const HeroSection = ({ siteName }) => {
           transition={{ duration: 0.8 }}
         >
           <div className="relative inline-block mb-6">
-            <h1 className="text-6xl sm:text-5xl md:text-7xl font-bold font-serif tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-primary via-purple-900 to-pink-500">
+            <h1 className="text-6xl sm:text-5xl md:text-7xl font-bold font-serif tracking-tight bg-clip-text text-black bg-gradient-to-r from-primary via-purple-900 to-pink-500">
               {siteName}
             </h1>
             <Zap
               size={64}
-              className="absolute -top-6 -right-10 text-purple-800 animate-pulse"
+              className="absolute -top-6 -right-10 text-black animate-pulse"
             />
           </div>
 
@@ -70,7 +70,7 @@ const HeroSection = ({ siteName }) => {
             <Link to="/motivation">
               <Button
                 size="lg"
-                className="bg-gradient-to-r from-primary to-purple-600 text-white hover:brightness-110"
+                className="bg-black text-white hover:bg-black/80 transition-colors duration-300"
               >
                 Get Inspired <Lightbulb className="ml-2 h-5 w-5" />
               </Button>
@@ -79,7 +79,7 @@ const HeroSection = ({ siteName }) => {
               <Button
                 variant="outline"
                 size="lg"
-                className="border-primary text-primary hover:bg-primary/10"
+                className="border-black text-black hover:bg-black hover:text-white transition-colors duration-300"
               >
                 Explore AI <Cpu className="ml-2 h-5 w-5" />
               </Button>
