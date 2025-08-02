@@ -5,7 +5,7 @@ import { Zap, ArrowDownCircle, Lightbulb, Cpu } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const bgImage =
-  'A full-body black robot standing upright against a white background The robot has a sleek, modern design with expressive, glowing eyes The robot has a head, arms, and legs, and is standing in a neut.png';
+  'robot.png';
 
 const HeroSection = ({ siteName }) => {
   return (
