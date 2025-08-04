@@ -41,7 +41,7 @@ import React, { useState, useEffect } from 'react';
           }}
           animate={isHidden ? "hidden" : "visible"}
           transition={{ duration: 0.35, ease: "easeInOut" }}
-          className="sticky top-3 z-50 rounded-full ml-12 mr-12 bg-purple-600 backdrop-blur-lg shadow-sm border-b border-slate-200"
+          className="sticky top-3 z-50 rounded-full ml-12 mr-12 bg-blue-600 backdrop-blur-lg shadow-sm border-b border-slate-200"
         >
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex items-center justify-between h-20">
@@ -58,12 +58,12 @@ import React, { useState, useEffect } from 'react';
                     key={link.label}
                     to={link.href}
                     className={({ isActive }) =>
-                      `text-slate-600 hover:text-primary transition-colors duration-300 font-medium text-white relative group ${isActive ? "text-primary" : ""}`
+                      `text-slate-600 hover: transition-colors duration-300 font-medium text-white relative group ${isActive ? "text-primary" : ""}`
                     }
                   >
                     {link.label}
-                    <span className="absolute bottom-[-2px] left-0 w-full h-0.5 bg-primary scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
-                     {({ isActive }) => isActive && <span className="absolute bottom-[-2px] left-0 w-full h-0.5 bg-primary scale-x-100 transition-transform duration-300 origin-left"></span>}
+                    <span className="absolute bottom-[-2px] left-0 w-full h-0.5 bg-white scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
+                     {({ isActive }) => isActive && <span className="absolute bottom-[-2px] left-0 w-full h-0.5 bg-white scale-x-100 transition-transform duration-300 origin-left"></span>}
                   </NavLink>
                 ))}
               </nav>
