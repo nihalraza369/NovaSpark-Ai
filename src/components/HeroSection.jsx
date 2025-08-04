@@ -111,7 +111,7 @@ const HeroSection = ({ siteName = "Novaspark AI" }) => {
         >
           <div className="relative inline-block mb-6">
             <motion.h1 
-              className="text-5xl sm:text-6xl lg:text-7xl font-bold font-serif tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-slate-900 via-blue-900 to-purple-900"
+              className="text-7xl sm:text-6x1 lg:text-7x1 font-bold font-serif tracking-tight bg-clip-text text-blue-500 bg-gradient-to-r from-slate-900 via-blue-900 to-purple-900"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
@@ -149,7 +149,7 @@ const HeroSection = ({ siteName = "Novaspark AI" }) => {
           >
             <Button
               size="lg"
-              className="bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:from-blue-700 hover:to-purple-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
+              className="bg-gradient-to-r from-blue-600 to-blue-600 text-white hover:from-blue-700 hover:to-blue-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
               onClick={() => {
                 // Add your navigation logic here
                 console.log('Get Started clicked');
@@ -160,7 +160,7 @@ const HeroSection = ({ siteName = "Novaspark AI" }) => {
             <Button
               variant="outline"
               size="lg"
-              className="border-2 border-slate-300 text-slate-700 hover:bg-slate-900 hover:text-white hover:border-slate-900 transition-all duration-300 shadow-md hover:shadow-lg transform hover:scale-105"
+              className="border-2 border-slate-300 text-slate-700 hover:bg-blue-500 hover:text-white transition-all duration-300 shadow-md hover:shadow-lg transform hover:scale-105"
               onClick={() => {
                 // Add your navigation logic here
                 console.log('Learn More clicked');
@@ -236,28 +236,6 @@ const HeroSection = ({ siteName = "Novaspark AI" }) => {
         </motion.div>
       </div>
 
-      {/* Scroll Down Indicator */}
-      <motion.div
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 1.2 }}
-      >
-        <motion.div
-          animate={{ y: [0, 10, 0] }}
-          transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-        >
-          <ArrowDownCircle
-            size={40}
-            className="text-slate-400 hover:text-blue-600 cursor-pointer transition-colors duration-300"
-            onClick={() =>
-              document
-                .getElementById('featured-content')
-                ?.scrollIntoView({ behavior: 'smooth' })
-            }
-          />
-        </motion.div>
-      </motion.div>
     </section>
   );
 };
