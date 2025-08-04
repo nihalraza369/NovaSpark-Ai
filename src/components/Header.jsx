@@ -41,7 +41,7 @@ import React, { useState, useEffect } from 'react';
           }}
           animate={isHidden ? "hidden" : "visible"}
           transition={{ duration: 0.35, ease: "easeInOut" }}
-          className="sticky top-3 z-50 rounded-full ml-12 mr-12 bg-black backdrop-blur-lg shadow-sm border-b border-slate-200"
+          className="sticky top-3 z-50 rounded-full ml-12 mr-12 bg-purple-600 backdrop-blur-lg shadow-sm border-b border-slate-200"
         >
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex items-center justify-between h-20">
