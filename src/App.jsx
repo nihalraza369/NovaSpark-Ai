@@ -18,7 +18,7 @@ import React from 'react';
       const siteName = "NovaSpark";
       const navLinks = [
         { href: "/", label: "Home" },
-        { href: "/motivation", label: "Motivation" },
+        { href: "/WebDevelopment", label: "Web Development" },
         { href: "/ai", label: "AI Insights" },
         { href: "/tech-trends", label: "Tech Trends" },
         { href: "/services", label: "Services" },
