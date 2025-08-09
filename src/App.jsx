@@ -14,6 +14,11 @@ import React from 'react';
     import TechTrendsPage from "@/pages/TechTrendsPage";
     import MotivationPage from "@/pages/MotivationPage";
     import FrontendDocumentation from "@/webdev/Frontend";
+    import BackendDocumentation from "@/webdev/Backend";
+    import DatabaseDocumentation from "@/webdev/Database";
+    import DeploymentDocumentation from './webdev/Deployment';
+   import ToolandResourseDocumentation from './webdev/ToolandResourse';
+   import VersionControlDocumentation from './webdev/Versioncontrol';
 
     function App() {
       const siteName = "NovaSpark";
@@ -44,6 +49,11 @@ import React from 'react';
                 <Route path="/tech-trends" element={<TechTrendsPage />} />
                 <Route path="/motivation" element={<MotivationPage />} />
                 <Route path="/webdev/frontend" element={<FrontendDocumentation />} />
+                <Route path="/webdev/backend" element={<BackendDocumentation />} />
+                <Route path="/webdev/database" element={<DatabaseDocumentation />} />
+                <Route path="/webdev/deployment" element={<DeploymentDocumentation />} />
+                <Route path="/webdev/toolandresourse" element={<ToolandResourseDocumentation />} />
+                <Route path="/webdev/versioncontrol" element={<VersionControlDocumentation />} />
                 <Route path="*" element={<NotFoundPage />} />
               </Routes>
             </main>
