@@ -13,7 +13,7 @@ import React from 'react';
     import AiPage from "@/pages/AiPage";
     import TechTrendsPage from "@/pages/TechTrendsPage";
     import MotivationPage from "@/pages/MotivationPage";
-    import FrontendDocumentation from "@/webdev/frontend";
+    import FrontendDocumentation from "@/webdev/Frontend";
 
     function App() {
       const siteName = "NovaSpark";

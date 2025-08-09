@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Code, Database, GitBranch, Server, Globe, Lightbulb, Target, BarChart3, Sparkles, Brain, Users, ChevronRight, Play, ArrowRight, CheckCircle, Star, Trophy, Zap } from 'lucide-react';
+import FrontendDocumentation from "@/webdev/Frontend";
+
 
 const WebDevelopmentMotivationPage = () => {
   const [scrollY, setScrollY] = useState(0);
