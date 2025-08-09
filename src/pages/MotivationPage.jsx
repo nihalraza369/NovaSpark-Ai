@@ -1,7 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { Code, Database, GitBranch, Server, Globe, Lightbulb, Target, BarChart3, Sparkles, Brain, Users, ChevronRight, Play, ArrowRight, CheckCircle, Star, Trophy, Zap } from 'lucide-react';
 import FrontendDocumentation from "@/webdev/Frontend";
-
+import BackendDocumentation from '../webdev/Backend';
+import DatabaseDocumentation from '../webdev/Deployment';
+import DeploymentDocumentation from '../webdev/Deployment';
+import ToolandResourseDocumentation from '../webdev/ToolandResourse';
+import VersionControlDocumentation from '../webdev/Versioncontrol';
 
 const WebDevelopmentMotivationPage = () => {
   const [scrollY, setScrollY] = useState(0);
@@ -65,7 +69,7 @@ const WebDevelopmentMotivationPage = () => {
       color: "from-yellow-500 to-orange-500",
       bgColor: "bg-yellow-50",
       features: ["VS Code Tips", "Chrome DevTools", "Testing Frameworks", "Productivity Tools"],
-      detailsLink: "/webdev/Tools"
+      detailsLink: "/webdev/ToolandResourse"
     },
   ];
 
