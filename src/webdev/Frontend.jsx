@@ -26,7 +26,7 @@ const FrontendDocumentation = () => {
       name: 'HTML',
       icon: Code2,
       color: 'from-orange-500 to-red-500',
-      filters: ['Semantic HTML', 'Forms', 'Accessibility', 'SEO Basics']
+      filters: ['Semantic HTML', 'Forms', 'Accessibility', 'SEO Basics','Semantic HTML', 'Forms', 'Accessibility', 'SEO Basics','Semantic HTML', 'Forms', 'Accessibility', 'SEO Basics','Semantic HTML', 'Forms', 'Accessibility', 'SEO Basics','Semantic HTML', 'Forms', 'Accessibility', 'SEO Basics','Semantic HTML', 'Forms', 'Accessibility', 'SEO Basics','Semantic HTML', 'Forms', 'Accessibility', 'SEO Basics','Semantic HTML', 'Forms', 'Accessibility', 'SEO Basics']
     },
     {
       id: 'css',
@@ -144,7 +144,7 @@ const FrontendDocumentation = () => {
             </div>
             
             {/* Mobile Technology List */}
-            <div className="p-4 space-y-3">
+            <div className="p-4 space-y-3 lg:space-y-5">
               {technologies.map((tech) => {
                 const IconComponent = tech.icon;
                 const isFilterActive = activeFilter === tech.id;
@@ -218,7 +218,7 @@ const FrontendDocumentation = () => {
           </div>
 
           {/* Desktop Technology List */}
-          <div className="p-3 space-y-2">
+          <div className="p-3 space-y-7">
             {technologies.map((tech) => {
               const IconComponent = tech.icon;
               const isFilterActive = activeFilter === tech.id;
