@@ -13,6 +13,7 @@ import React from 'react';
     import AiPage from "@/pages/AiPage";
     import TechTrendsPage from "@/pages/TechTrendsPage";
     import MotivationPage from "@/pages/MotivationPage";
+    import FrontendDocumentation from "@/webdev/frontend";
 
     function App() {
       const siteName = "NovaSpark";
@@ -42,6 +43,7 @@ import React from 'react';
                 <Route path="/ai" element={<AiPage />} />
                 <Route path="/tech-trends" element={<TechTrendsPage />} />
                 <Route path="/motivation" element={<MotivationPage />} />
+                <Route path="/webdev/frontend" element={<FrontendDocumentation />} />
                 <Route path="*" element={<NotFoundPage />} />
               </Routes>
             </main>
