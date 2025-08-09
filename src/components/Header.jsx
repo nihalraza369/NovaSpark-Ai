@@ -105,7 +105,7 @@ const Header = ({ siteName = "YourBrand" }) => {
 
   return (
     <header
-      className={`sticky top-4 z-50 mx-4 lg:mx-8 xl:mx-12 transition-transform duration-300 ${
+      className={`sticky  z-50 mx-4 lg:mx-8 xl:mx-12 transition-transform duration-300 ${
         isHidden ? '-translate-y-full' : 'translate-y-0'
       }`}
     >
