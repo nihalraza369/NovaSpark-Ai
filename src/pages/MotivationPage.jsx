@@ -17,7 +17,8 @@ const WebDevelopmentMotivationPage = () => {
       icon: <Code size={32} className="text-blue-500" />,
       color: "from-blue-500 to-cyan-500",
       bgColor: "bg-blue-50",
-      features: ["React & Vue.js", "Responsive Design", "Interactive UIs", "Modern CSS"]
+      features: ["React & Vue.js", "Responsive Design", "Interactive UIs", "Modern CSS"],
+      detailsLink: "/webdev/Frontend"
     },
     {
       title: "Backend Development",
@@ -25,7 +26,8 @@ const WebDevelopmentMotivationPage = () => {
       icon: <Server size={32} className="text-green-500" />,
       color: "from-green-500 to-emerald-500",
       bgColor: "bg-green-50",
-      features: ["Node.js & Python", "REST APIs", "Authentication", "Cloud Services"]
+      features: ["Node.js & Python", "REST APIs", "Authentication", "Cloud Services"],
+      detailsLink: "/webdev/Backend"
     },
     {
       title: "Database Management",
@@ -33,7 +35,8 @@ const WebDevelopmentMotivationPage = () => {
       icon: <Database size={32} className="text-purple-500" />,
       color: "from-purple-500 to-violet-500",
       bgColor: "bg-purple-50",
-      features: ["MySQL & MongoDB", "Database Design", "Query Optimization", "Data Security"]
+      features: ["MySQL & MongoDB", "Database Design", "Query Optimization", "Data Security"],
+      detailsLink: "/webdev/Database"
     },
     {
       title: "Version Control",
@@ -41,7 +44,8 @@ const WebDevelopmentMotivationPage = () => {
       icon: <GitBranch size={32} className="text-orange-500" />,
       color: "from-orange-500 to-red-500",
       bgColor: "bg-orange-50",
-      features: ["Git & GitHub", "Branching Strategies", "Code Reviews", "Team Collaboration"]
+      features: ["Git & GitHub", "Branching Strategies", "Code Reviews", "Team Collaboration"],
+      detailsLink: "/webdev/VersionControl"
     },
     {
       title: "Deployment & DevOps",
@@ -49,7 +53,8 @@ const WebDevelopmentMotivationPage = () => {
       icon: <Globe size={32} className="text-indigo-500" />,
       color: "from-indigo-500 to-blue-500",
       bgColor: "bg-indigo-50",
-      features: ["Docker & Kubernetes", "AWS & Azure", "CI/CD Pipelines", "Performance Optimization"]
+      features: ["Docker & Kubernetes", "AWS & Azure", "CI/CD Pipelines", "Performance Optimization"],
+      detailsLink: "/webdev/Deployment"
     },
     {
       title: "Tools & Resources",
@@ -57,7 +62,8 @@ const WebDevelopmentMotivationPage = () => {
       icon: <Zap size={32} className="text-yellow-500" />,
       color: "from-yellow-500 to-orange-500",
       bgColor: "bg-yellow-50",
-      features: ["VS Code Tips", "Chrome DevTools", "Testing Frameworks", "Productivity Tools"]
+      features: ["VS Code Tips", "Chrome DevTools", "Testing Frameworks", "Productivity Tools"],
+      detailsLink: "/webdev/Tools"
     },
   ];
 
@@ -222,16 +228,13 @@ const WebDevelopmentMotivationPage = () => {
               <div
                 key={topic.title}
                 className={`group relative overflow-hidden rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 ${topic.bgColor} border border-white/50`}
-    
               >
                 <div className={`absolute inset-0 bg-gradient-to-br ${topic.color} opacity-0 group-hover:opacity-10 transition-opacity duration-300`}></div>
-                
                 <div className="p-8">
                   <div className="flex items-start space-x-6">
                     <div className={`flex-shrink-0 p-4 bg-gradient-to-br ${topic.color} rounded-2xl shadow-lg group-hover:scale-110 transition-transform duration-300`}>
                       {React.cloneElement(topic.icon, { className: "text-white" })}
                     </div>
-                    
                     <div className="flex-1">
                       <h3 className="text-2xl font-bold text-slate-800 mb-3 group-hover:text-slate-900 transition-colors">
                         {topic.title}
@@ -239,7 +242,6 @@ const WebDevelopmentMotivationPage = () => {
                       <p className="text-slate-600 mb-6 leading-relaxed">
                         {topic.description}
                       </p>
-                      
                       <div className="grid grid-cols-2 gap-3 mb-6">
                         {topic.features.map((feature, idx) => (
                           <div key={idx} className="flex items-center space-x-2">
@@ -248,11 +250,15 @@ const WebDevelopmentMotivationPage = () => {
                           </div>
                         ))}
                       </div>
-                      
-                      <button className={`px-6 py-3 bg-gradient-to-r ${topic.color} text-white rounded-xl font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 flex items-center space-x-2 group-hover:scale-105`}>
-                        <span>Start Learning</span>
-                        <ChevronRight size={18} />
-                      </button>
+                      {topic.detailsLink && (
+                        <a
+                          href={topic.detailsLink}
+                          className={`px-6 py-3 bg-gradient-to-r ${topic.color} text-white rounded-xl font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 flex items-center space-x-2 group-hover:scale-105`}
+                        >
+                          <span>Start Learning</span>
+                          <ChevronRight size={18} />
+                        </a>
+                      )}
                     </div>
                   </div>
                 </div>
@@ -275,7 +281,6 @@ const WebDevelopmentMotivationPage = () => {
             <p className="text-xl md:text-2xl text-white/90 mb-12 leading-relaxed">
               Join thousands of successful developers who started their careers with our comprehensive courses and resources.
             </p>
-            
             <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
               <button className="px-10 py-5 bg-white text-slate-800 rounded-2xl font-bold text-lg shadow-2xl hover:shadow-3xl transform hover:-translate-y-2 transition-all duration-300 flex items-center space-x-3">
                 <Trophy className="text-yellow-500" size={24} />
@@ -286,7 +291,6 @@ const WebDevelopmentMotivationPage = () => {
                 <ArrowRight size={20} />
               </button>
             </div>
-            
             <div className="mt-12 grid grid-cols-3 gap-8 text-center">
               <div>
                 <div className="text-3xl font-bold text-white mb-2">50,000+</div>
