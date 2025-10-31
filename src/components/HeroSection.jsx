@@ -1,241 +1,159 @@
-
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Zap, ArrowDownCircle, Lightbulb, Cpu, Bot, Shield, TrendingUp, Heart } from 'lucide-react';
-import { Button } from '@/components/ui/button';
+import { ArrowRight, Cpu, ShieldCheck, TrendingUp } from 'lucide-react';
+import { Button } from '@/components/ui/button'; // Assuming you have this from ShadCN UI
+
+// Background mein aahista se ghoomne wali glowing shapes
+const BackgroundGlows = () => (
+  <>
+    <motion.div
+      className="absolute top-[20%] left-[10%] w-96 h-96 bg-cyan-500/20 rounded-full blur-3xl"
+      animate={{ 
+        x: [-20, 20, -20], 
+        scale: [1, 1.1, 1] 
+      }}
+      transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
+    />
+    <motion.div
+      className="absolute bottom-[20%] right-[10%] w-96 h-96 bg-violet-600/20 rounded-full blur-3xl"
+      animate={{ 
+        y: [15, -15, 15], 
+        rotate: [0, 90, 0] 
+      }}
+      transition={{ duration: 25, repeat: Infinity, ease: 'linear' }}
+    />
+  </>
+);
 
 const HeroSection = ({ siteName = "Novaspark AI" }) => {
-  // Animation variants for floating boxes
-  const floatingBoxVariants = {
-    animate: {
-      y: [-8, 8, -8],
-      rotate: [-2, 2, -2],
-      transition: {
-        duration: 4,
-        repeat: Infinity,
-        ease: "easeInOut"
-      }
-    }
+  // Animation Variants
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: { opacity: 1, transition: { staggerChildren: 0.2 } },
   };
 
-  // Robot floating animation
-  const robotVariants = {
-    animate: {
-      y: [-10, 10, -10],
-      rotate: [-1, 1, -1],
-      transition: {
-        duration: 6,
-        repeat: Infinity,
-        ease: "easeInOut"
-      }
-    }
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } },
   };
 
-  // Glow animation for robot
-  const glowVariants = {
-    animate: {
-      scale: [1, 1.05, 1],
-      opacity: [0.5, 0.8, 0.5],
-      transition: {
-        duration: 3,
-        repeat: Infinity,
-        ease: "easeInOut"
-      }
-    }
+  const robotPodiumVariants = {
+    initial: { opacity: 0, scale: 0.7 },
+    animate: { opacity: 1, scale: 1, transition: { duration: 1, delay: 0.4, ease: [0.16, 1, 0.3, 1] } }
   };
 
-  const floatingBoxes = [
-    {
-      id: 1,
-      icon: Bot,
-      text: "🤖 AI Assistant",
-      position: "top-[20%] left-[10%]",
-      delay: 0
-    },
-    {
-      id: 2,
-      icon: Shield,
-      text: "🔐 Cybersecurity",
-      position: "top-[15%] right-[15%]",
-      delay: 1
-    },
-    {
-      id: 3,
-      icon: TrendingUp,
-      text: "📈 Marketing Growth",
-      position: "bottom-[25%] left-[8%]",
-      delay: 2
-    },
-    {
-      id: 4,
-      icon: Heart,
-      text: "💡 Motivation Hub",
-      position: "bottom-[20%] right-[12%]",
-      delay: 1.5
-    }
+  // Naye holographic cards ke liye data
+  const holographicFeatures = [
+    { icon: Cpu, title: "AI Core", position: "absolute top-[20%] -left-10" },
+    { icon: ShieldCheck, title: "Secure Learning", position: "absolute top-[55%] -right-12" },
+    { icon: TrendingUp, title: "Skill Growth", position: "absolute bottom-[20%] -left-4" },
   ];
+  
+  const floatingCardVariant = {
+      animate: (i) => ({
+      y: [-8 + i, 8 - i, -8 + i],
+      transition: { duration: 5 + i, repeat: Infinity, ease: "easeInOut" }
+    })
+  };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center text-slate-800 overflow-hidden px-6 py-16 md:py-24 bg-gradient-to-br from-slate-50 via-white to-blue-50">
-      {/* Background Animated Elements */}
-      <div className="absolute inset-0 z-0 pointer-events-none">
-        <motion.div
-          className="absolute top-1/4 left-1/4 w-32 h-32 md:w-48 md:h-48 bg-gradient-to-r from-blue-400/20 to-purple-400/20 rounded-full blur-3xl"
-          animate={{ 
-            x: [-20, 20, -20], 
-            y: [-10, 10, -10], 
-            scale: [1, 1.1, 1] 
-          }}
-          transition={{ duration: 15, repeat: Infinity, ease: 'linear' }}
-        />
-        <motion.div
-          className="absolute bottom-1/4 right-1/4 w-32 h-32 md:w-48 md:h-48 bg-gradient-to-r from-indigo-400/20 to-pink-400/20 rounded-full blur-3xl"
-          animate={{ 
-            x: [30, -30, 30], 
-            y: [15, -15, 15], 
-            rotate: [0, 180, 360] 
-          }}
-          transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
-        />
-      </div>
+    <section className="relative w-full bg-slate-950 flex items-center justify-center overflow-hidden py-24 sm:py-32 lg:py-0">
+      {/* Video Background */}
+      <video
+        src="/videos/13510979_3840_2160_30fps.mp4" // Sahi path yahan dein
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="absolute top-0 left-0 w-full h-full object-cover opacity-20"
+      />
+      {/* Background Effects */}
+      <div className="absolute inset-0 bg-gradient-to-b from-black/60 to-slate-900/90" />
+      <BackgroundGlows />
 
       {/* Main Content Grid */}
-      <div className="relative z-10 max-w-7xl w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-        
-        {/* Text Content */}
-        <motion.div
-          className="text-center lg:text-left order-2 lg:order-1"
-          initial={{ opacity: 0, x: -50 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8 }}
-        >
-          <div className="relative inline-block mb-6">
-            <motion.h1 
-              className="text-7xl sm:text-6x1 lg:text-7x1 font-bold font-serif tracking-tight bg-clip-text text-blue-500 bg-gradient-to-r from-slate-900 via-blue-900 to-purple-900"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-            >
-              {siteName}
-            </motion.h1>
-            <motion.div
-              initial={{ scale: 0, rotate: -180 }}
-              animate={{ scale: 1, rotate: 0 }}
-              transition={{ duration: 0.8, delay: 0.5 }}
-            >
-              <Zap
-                size={48}
-                className="absolute -top-4 -right-8 lg:-right-12 text-yellow-500 animate-pulse"
-              />
-            </motion.div>
-          </div>
-
-          <motion.p 
-            className="text-lg md:text-xl text-slate-600 mb-8 leading-relaxed max-w-2xl"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-          >
-            Empowering your journey through <strong>Artificial Intelligence</strong>, <strong>Cybersecurity</strong>, 
-            <strong> Digital Marketing</strong>, and <strong>Personal Growth</strong>. 
-            Transform your potential into expertise with cutting-edge learning experiences.
-          </motion.p>
-
+      <div className="relative z-10 container mx-auto px-6 h-full lg:h-[700px] flex items-center">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-8 items-center w-full">
+          
+          {/* Text Content */}
           <motion.div 
-            className="flex flex-col sm:flex-row justify-center lg:justify-start items-center gap-4"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.6 }}
+            className="text-center lg:text-left"
+            variants={containerVariants}
+            initial="hidden"
+            animate="visible"
           >
-            <Button
-              size="lg"
-              className="bg-gradient-to-r from-blue-600 to-blue-600 text-white hover:from-blue-700 hover:to-blue-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
-              onClick={() => {
-                // Add your navigation logic here
-                console.log('Get Started clicked');
-              }}
+            <motion.h1 
+              variants={itemVariants}
+              className="text-4xl md:text-5xl lg:text-6xl font-black tracking-tighter text-white"
             >
-              Get Started <Lightbulb className="ml-2 h-5 w-5" />
-            </Button>
-            <Button
-              variant="outline"
-              size="lg"
-              className="border-2 border-slate-300 text-slate-700 hover:bg-blue-500 hover:text-white transition-all duration-300 shadow-md hover:shadow-lg transform hover:scale-105"
-              onClick={() => {
-                // Add your navigation logic here
-                console.log('Learn More clicked');
-              }}
-            >
-              Learn More <Cpu className="ml-2 h-5 w-5" />
-            </Button>
-          </motion.div>
-        </motion.div>
+              Shape the Future with
+              <span className="mt-2 block bg-clip-text text-transparent bg-gradient-to-r from-white to-slate-400">
+                AI-Driven Learning
+              </span>
+            </motion.h1>
 
-        {/* Robot Visual with Floating Boxes */}
-        <motion.div
-          className="relative flex justify-center items-center order-1 lg:order-2"
-          initial={{ opacity: 0, x: 50 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8 }}
-        >
-          <div className="relative w-full max-w-lg">
-            {/* Robot Glow Effect */}
-            <motion.div
-              className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-400/30 to-purple-400/30 blur-2xl"
-              variants={glowVariants}
-              animate="animate"
-            />
+            <motion.p 
+              variants={itemVariants}
+              className="mt-6 text-lg md:text-xl text-slate-300 max-w-lg mx-auto lg:mx-0"
+            >
+              Master in-demand skills in AI, Cybersecurity, and more through our 
+              next-generation educational platform.
+            </motion.p>
             
-            {/* Robot Image */}
-            <motion.div
-              className="relative z-10"
-              variants={robotVariants}
-              animate="animate"
+            <motion.div 
+              variants={itemVariants}
+              className="mt-10 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
             >
-              <img
-                src="robot.png"
-                alt="Novaspark AI Robot Assistant"
-                className="w-full max-w-md mx-auto drop-shadow-2xl"
-              />
+              <Button size="lg" className="bg-white text-slate-900 font-bold text-base hover:bg-slate-200 transition-all duration-300 transform hover:scale-105 shadow-lg shadow-white/10">
+                Get Started for Free <ArrowRight className="ml-2 h-5 w-5" />
+              </Button>
             </motion.div>
+          </motion.div>
 
-            {/* Floating Boxes */}
-            {floatingBoxes.map((box) => {
-              const IconComponent = box.icon;
-              return (
+          {/* Visual Content (Robot on a Podium) */}
+          <motion.div
+            className="relative h-full flex items-center justify-center"
+            variants={robotPodiumVariants}
+            initial="initial"
+            animate="animate"
+          >
+            {/* Podium Circle - Size increased */}
+            <div className="relative w-[300px] h-[300px] sm:w-[420px] sm:h-[420px] lg:w-[500px] lg:h-[500px]">
+              {/* Outer Glow */}
+              <div className="absolute inset-0 rounded-full bg-gradient-to-r from-cyan-500 to-violet-500 blur-2xl opacity-40"/>
+              {/* Glass Podium */}
+              <div className="absolute inset-0 bg-slate-800/30 backdrop-blur-md rounded-full border border-slate-700"/>
+              
+              {/* Robot Image */}
+              <motion.img 
+                src="/robot.png" // Aapki robot image
+                alt="AI Robot Assistant"
+                className="absolute inset-0 w-full h-full object-contain drop-shadow-2xl"
+                whileHover={{ scale: 1.05 }}
+                transition={{ duration: 0.3 }}
+              />
+
+              {/* Holographic Feature Cards */}
+              {holographicFeatures.map((feature, i) => (
                 <motion.div
-                  key={box.id}
-                  className={`absolute ${box.position} z-20`}
-                  initial={{ opacity: 0, scale: 0 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ 
-                    duration: 0.6, 
-                    delay: box.delay,
-                    type: "spring",
-                    stiffness: 100 
-                  }}
-                >
-                  <motion.div
-                    className="backdrop-blur-md bg-white/80 border border-white/20 rounded-xl px-4 py-3 shadow-lg hover:shadow-xl transition-shadow duration-300"
-                    variants={floatingBoxVariants}
+                    key={feature.title}
+                    className={`${feature.position} hidden sm:flex items-center gap-3 p-3 bg-slate-800/50 backdrop-blur-sm rounded-lg border-l-2 border-cyan-400 shadow-lg`}
+                    custom={i}
+                    variants={floatingCardVariant}
                     animate="animate"
-                    whileHover={{ 
-                      scale: 1.05,
-                      backgroundColor: "rgba(255, 255, 255, 0.95)"
-                    }}
-                  >
-                    <div className="flex items-center gap-2 text-sm font-medium text-slate-700 whitespace-nowrap">
-                      <IconComponent size={16} className="text-blue-600" />
-                      <span>{box.text}</span>
-                    </div>
-                  </motion.div>
+                    initial={{ opacity: 0, scale: 0.5 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.5, delay: 1 + i * 0.2 }}
+                >
+                    <feature.icon className="h-6 w-6 text-cyan-300" />
+                    <span className="font-bold text-sm text-white whitespace-nowrap">{feature.title}</span>
                 </motion.div>
-              );
-            })}
-          </div>
-        </motion.div>
-      </div>
+              ))}
+            </div>
+          </motion.div>
 
+        </div>
+      </div>
     </section>
   );
 };
