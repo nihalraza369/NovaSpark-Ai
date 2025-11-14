@@ -21,9 +21,9 @@ import React from 'react';
               <div>
                 <p className="font-semibold text-slate-800 mb-5 text-lg">Explore</p>
                 <ul className="space-y-3 text-sm">
-                  <li><Link to="/motivation" className="hover:text-primary transition-colors">Motivation Hub</Link></li>
+                  <li><Link to="/motivation" className="hover:text-primary transition-colors">Web Development</Link></li>
                   <li><Link to="/ai" className="hover:text-primary transition-colors">AI Insights</Link></li>
-                  <li><Link to="/tech-trends" className="hover:text-primary transition-colors">Tech Trends</Link></li>
+                  <li><Link to="/tech-trends" className="hover:text-primary transition-colors">Pragramming Languages</Link></li>
                   <li><Link to="/services" className="hover:text-primary transition-colors">Our Services</Link></li>
                 </ul>
               </div>
