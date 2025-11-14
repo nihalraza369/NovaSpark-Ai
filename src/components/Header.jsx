@@ -49,7 +49,7 @@ const Header = ({ siteName = "NovaSpark" }) => { // Changed default siteName for
     webDev: {
       label: "Web Development",
       icon: Code,
-      href: "/web-development", // Changed href for clarity
+      href: "/motivation", // Changed href for clarity
       suggestions: [
         { title: "Frontend", desc: "Crafting user interfaces", href: "/webdev/frontend", icon: Code },
         { title: "Backend", desc: "Powering server-side logic", href: "/webdev/backend", icon: Server },
@@ -62,7 +62,7 @@ const Header = ({ siteName = "NovaSpark" }) => { // Changed default siteName for
     aiInsights: {
       label: "AI Insights",
       icon: Brain,
-      href: "/ai-insights", // Changed href for clarity
+      href: "/ai", // Changed href for clarity
       suggestions: [
         { title: "AI Trends", desc: "Latest AI developments", href: "/ai/trends", icon: TrendingUp },
         { title: "Machine Learning", desc: "ML fundamentals", href: "/ai/ml-basics", icon: Brain },
@@ -73,7 +73,7 @@ const Header = ({ siteName = "NovaSpark" }) => { // Changed default siteName for
     programming: { // Changed key to lowercase for consistency
       label: "Programming Languages",
       icon: Code, // Changed icon from Brain to Code for Programming
-      href: "/programming-languages", // Changed href for clarity
+      href: "/tech-trends", // Changed href for clarity
       suggestions: [
         { title: "Python", desc: "Versatile and powerful", href: "/programming/python", icon: Brain }, // Icon changed to Brain for Python specific focus
         { title: "JavaScript", desc: "Web's core language", href: "/programming/javascript", icon: Code },
