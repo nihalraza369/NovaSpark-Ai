@@ -56,41 +56,7 @@ const DeploymentDocumentation = () => {
       color: 'from-teal-500 to-green-500',
       filters: ['Utility Classes', 'Components', 'Responsive', 'Dark Mode']
     },
-    {
-      id: 'html',
-      name: 'HTML',
-      icon: Code2,
-      color: 'from-orange-500 to-red-500',
-      filters: ['Semantic HTML', 'Forms', 'Accessibility', 'SEO Basics']
-    },
-    {
-      id: 'css',
-      name: 'CSS',
-      icon: Palette,
-      color: 'from-blue-500 to-cyan-500',
-      filters: ['Flexbox', 'Grid', 'Animations', 'Responsive Design']
-    },
-    {
-      id: 'javascript',
-      name: 'JavaScript',
-      icon: Zap,
-      color: 'from-yellow-500 to-orange-500',
-      filters: ['ES6+', 'DOM Manipulation', 'Async/Await', 'APIs']
-    },
-    {
-      id: 'react',
-      name: 'React',
-      icon: Layers,
-      color: 'from-cyan-500 to-blue-500',
-      filters: ['Components', 'Hooks', 'State Management', 'Router']
-    },
-    {
-      id: 'tailwind',
-      name: 'Tailwind',
-      icon: Globe,
-      color: 'from-teal-500 to-green-500',
-      filters: ['Utility Classes', 'Components', 'Responsive', 'Dark Mode']
-    }
+    
   ];
 
   const DeploymentContent = {
